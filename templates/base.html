@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8">
+    <title>SariqdevBlog</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="{% url 'post-list' %}">SariqdevBlog</a>
+        </h1>
+    </header>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <footer>
+        <h2>
+            <a href="{% url 'post-create' %}">Add new post</a>
+        </h2>
+    </footer>
+</body>
+</html>
