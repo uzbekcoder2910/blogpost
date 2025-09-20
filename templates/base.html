@@ -12,6 +12,16 @@
             <a href="{% url 'post-list' %}">SariqdevBlog</a>
         </h1>
     </header>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{user.username}}</p>
+        <p>
+            <a href="{% url 'logout' %}">Logout from website</a>
+        </p>
+    {% else %}
+        <p>
+            <a href="{% url 'login' %}">Login to website</a>
+        </p>
+    {% endif %}
     <div>
         {% block content %}
         {% endblock content %}
